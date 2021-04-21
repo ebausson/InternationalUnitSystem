@@ -2,6 +2,7 @@
 
 import displaynotation from "./DisplayNotation";
 import basicnotation from "./BasicNotation";
+import engineeringnotation from "./EngineeringNotation";
 import scientificnotation from "./ScientificNotation";
 import dimension from "../Dimension";
 
@@ -19,6 +20,10 @@ export default class notationprintinghelper {
 
   public static setDefaultDisplayNotationToBasicNotation():void {
     notationprintinghelper.defaultNotation = basicnotation.getInstance();
+  }
+
+  static setDefaultDisplayNotationToEngineeringNotation():void {
+    notationprintinghelper.defaultNotation = engineeringnotation.getInstance();
   }
 
   public static setDefaultDisplayNotationToScientificNotation():void {
