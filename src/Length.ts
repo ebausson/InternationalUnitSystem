@@ -7,7 +7,7 @@ export default class length extends dimension {
   private value:number;
 
   constructor(value:number) {
-    super();
+    super(value);
     this.value = value;
   }
 
