@@ -15,7 +15,7 @@ export default abstract class dimension {
   abstract getUnit():internationalsystemunit;
 
   public toString():string {
-    return notationprintinghelper.print(this);
+    return notationprintinghelper.toDefaultNotation(this.getValue()) + this.getUnit().getSymbol();
   }
 
 }
