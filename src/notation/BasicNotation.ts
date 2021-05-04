@@ -3,7 +3,7 @@
 import dimension from "../Dimension";
 import displaynotation from "./DisplayNotation";
 
-export default class basicnotation extends displaynotation {
+export default class basicnotation extends displaynotation<dimension> {
   private static instance:basicnotation;
 
   private constructor() {

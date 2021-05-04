@@ -12,3 +12,6 @@ test("Trying to create a negative time should fail", () => {
   }).toThrow();
 });
 
+test("Printing the duration of 60 Seconds should return 1mn.", () => {
+  expect(new time(60).toString()).toBe("1mn");
+});
