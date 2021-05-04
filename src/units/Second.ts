@@ -11,6 +11,7 @@ export default class second extends internationalsystemunit {
     super();
     this.initSubunits();
   }
+
   private initSubunits() {
     second.subunits = [
       new subunit("ns", 1/1e9),
@@ -20,8 +21,12 @@ export default class second extends internationalsystemunit {
       new subunit("mn", 60),
       new subunit("h", 3600),
       new subunit("d", 86400),
-      new subunit("year", 31557600),
+      new subunit("y", 31557600),
     ];
+  }
+
+  public static getSubunits():subunit[] {
+    return second.subunits;
   }
 
   public static getInstance():second {
@@ -38,6 +43,13 @@ export default class second extends internationalsystemunit {
     return "s";
   }
 
-
-
+  public printAsHumanReadableTime(value:number, precision:number):string {
+    const filteredUnits = second.getSubunits().filter(subUnit => value >= subUnit.getRatio()).slice (-1*precision);
+    const reducedResult = filteredUnits.reduceRight((accumulator, subunit) => {
+      const currentUnitValue = Math.floor(accumulator.startingValue/subunit.getRatio());
+      const currentUnitStringValue = (currentUnitValue>0) ? currentUnitValue + subunit.getSymbol(): "";
+      return {result:accumulator.result + currentUnitStringValue, startingValue:value%subunit.getRatio()};
+    }, {result:"", startingValue:value});
+    return reducedResult.result;
+  }
 }

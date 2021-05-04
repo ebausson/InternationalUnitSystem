@@ -8,4 +8,12 @@ export default class subunit {
     this.symbol = symbol;
     this.ratio = ratio;
   }
+
+  public getRatio() {
+    return this.ratio;
+  }
+
+  public getSymbol() {
+    return this.symbol;
+  }
 }
