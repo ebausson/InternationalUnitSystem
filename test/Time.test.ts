@@ -20,7 +20,10 @@ test("Printing the duration of 0.0001ms should return 100μs.", () => {
   expect (new time(0.0001).toString()).toBe("100μs");
 });
 
-
 test("Printing the duration of 1e8s should return 3year and 61 days.", () => {
   expect (new time(1e8).toString()).toBe("3y61d");
+});
+
+test("Printing the duration of 0s should return 0s.", () => {
+  expect (new time(0).toString()).toBe("0s");
 });
