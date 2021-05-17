@@ -1,8 +1,8 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 
-export default class candela extends internationalsystemunit {
+export default class candela extends baseunit {
   private static instance:candela;
 
   private constructor(){

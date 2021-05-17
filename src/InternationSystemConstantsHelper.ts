@@ -1,7 +1,10 @@
 "use strict";
 
-import frequence from "./Frequence";
+import frequency from "./Frequency";
 
 export default class internationalsystemunitconstanthelper {
-  hyperfinetransitionfrequencyofcesium:frequence = frequence.getCesiumHyperfineTransitionFrequency();
+
+  public getHyperfineTransitionFrequencyOfCesium():frequency {
+    return frequency.getCesiumHyperfineTransitionFrequency();
+  }
 }

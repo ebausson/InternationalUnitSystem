@@ -1,9 +1,9 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 import subunit from "./SubUnit";
 
-export default class second extends internationalsystemunit {
+export default class second extends baseunit {
   private static instance:second;
   private static subunits:subunit[];
 

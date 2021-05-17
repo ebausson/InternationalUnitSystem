@@ -9,12 +9,16 @@ export default class hertz extends composedunit {
   private constructor(){
     super([], [second.getInstance()]);
   }
-  static getInstance(): import("./InternationalSystemUnit").default {
-    throw new Error("Method not implemented.");
+  
+  public static getInstance():hertz {
+    hertz.instance = new hertz();
+    hertz.getInstance = function():hertz {
+      return hertz.instance;
+    };
+    return hertz.getInstance();
   }
 
   getSymbol(): string {
     return "Hz";
   }
-
 }

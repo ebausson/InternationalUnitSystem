@@ -1,8 +1,8 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 
-export default class meter extends internationalsystemunit {
+export default class meter extends baseunit {
   private static instance:meter;
 
   private constructor(){

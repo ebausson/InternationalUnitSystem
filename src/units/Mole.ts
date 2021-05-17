@@ -1,8 +1,8 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 
-export default class mole extends internationalsystemunit {
+export default class mole extends baseunit {
   private static instance:mole;
 
   private constructor(){

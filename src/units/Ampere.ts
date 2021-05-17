@@ -1,8 +1,8 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 
-export default class ampere extends internationalsystemunit {
+export default class ampere extends baseunit {
   private static instance:ampere;
 
   private constructor(){

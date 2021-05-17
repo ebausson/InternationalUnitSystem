@@ -1,8 +1,8 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 
-export default class kilogram extends internationalsystemunit {
+export default class kilogram extends baseunit {
   private static instance:kilogram;
 
   private constructor(){
