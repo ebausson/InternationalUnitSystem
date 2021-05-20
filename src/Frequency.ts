@@ -9,16 +9,10 @@ export default class frequency extends dimension {
 
   private static cesiumHyperfineTransitionFrequency:frequency;
 
-  private value:number;
-
   constructor(value:number) {
     super(value);
-    this.value = value;
   }
 
-  getValue(): number {
-    return this.value;
-  }
   getUnit(): InternationalSystemUnit {
     return hertz.getInstance();
   }
