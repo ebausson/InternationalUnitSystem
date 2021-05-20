@@ -9,13 +9,11 @@ export default class ampere extends baseunit {
     super();
   }
 
+  public static initialize():void {
+    ampere.instance = new ampere();
+  }
+
   public static getInstance():ampere {
-    if (typeof ampere.instance !==  "object") {
-      ampere.instance || (ampere.instance= new ampere());
-      ampere.getInstance = function():ampere {
-        return ampere.instance;
-      };
-    }
     return ampere.getInstance();
   }
 
@@ -23,3 +21,6 @@ export default class ampere extends baseunit {
     return "A";
   }
 }
+
+ampere.initialize();
+ampere.initialize = (function():void{return;});

@@ -9,13 +9,11 @@ export default class kelvin extends internationalsystemunit {
     super();
   }
 
+  public static initialize():void {
+    kelvin.instance = new kelvin();
+  }
+
   public static getInstance():kelvin {
-    if (typeof kelvin.instance !==  "object") {
-      kelvin.instance || (kelvin.instance= new kelvin());
-      kelvin.getInstance = function():kelvin {
-        return kelvin.instance;
-      };
-    }
     return kelvin.getInstance();
   }
 
@@ -23,3 +21,6 @@ export default class kelvin extends internationalsystemunit {
     return "K";
   }
 }
+
+kelvin.initialize();
+kelvin.initialize = (function():void{return;});

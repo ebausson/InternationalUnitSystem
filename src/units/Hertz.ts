@@ -10,16 +10,19 @@ export default class hertz extends composedunit {
   private constructor(){
     super([new unitOrder(second.getInstance(), -1)], "Hz");
   }
+
+  public static initialize():void {
+    hertz.instance = new hertz();
+  }
   
   public static getInstance():hertz {
-    hertz.instance = new hertz();
-    hertz.getInstance = function():hertz {
-      return hertz.instance;
-    };
-    return hertz.getInstance();
+    return hertz.instance;
   }
 
   getSymbol(): string {
     return "Hz";
   }
 }
+
+hertz.initialize();
+hertz.initialize = (function():void{return;});

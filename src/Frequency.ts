@@ -6,11 +6,14 @@ import InternationalSystemUnit from "./units/InternationalSystemUnit";
 
 
 export default class frequency extends dimension {
-
   private static cesiumHyperfineTransitionFrequency:frequency;
 
   constructor(value:number) {
     super(value);
+  }
+
+  public static initialize():void {
+    frequency.cesiumHyperfineTransitionFrequency = new frequency(9192631770);
   }
 
   getUnit(): InternationalSystemUnit {
@@ -18,10 +21,9 @@ export default class frequency extends dimension {
   }
 
   public static getCesiumHyperfineTransitionFrequency(): frequency {
-    frequency.cesiumHyperfineTransitionFrequency = new frequency(9192631770);
-    frequency.getCesiumHyperfineTransitionFrequency = function() { 
-      return frequency.cesiumHyperfineTransitionFrequency;
-    };
-    return frequency.getCesiumHyperfineTransitionFrequency();
+    return frequency.cesiumHyperfineTransitionFrequency;
   }
 }
+
+frequency.initialize();
+frequency.initialize = (function():void{return;});

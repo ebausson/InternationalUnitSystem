@@ -9,13 +9,11 @@ export default class kilogram extends baseunit {
     super();
   }
 
+  public static initialize():void {
+    kilogram.instance= new kilogram();
+  }
+
   public static getInstance():kilogram {
-    if (typeof kilogram.instance !==  "object") {
-      kilogram.instance || (kilogram.instance= new kilogram());
-      kilogram.getInstance = function():kilogram {
-        return kilogram.instance;
-      };
-    }
     return kilogram.getInstance();
   }
 
@@ -23,3 +21,6 @@ export default class kilogram extends baseunit {
     return "kg";
   }
 }
+
+kilogram.initialize();
+kilogram.initialize = (function():void{return;});

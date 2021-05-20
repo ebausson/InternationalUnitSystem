@@ -9,13 +9,11 @@ export default class candela extends baseunit {
     super();
   }
 
+  public initialize():void {
+    candela.instance = new candela();
+  }
+
   public static getInstance():candela {
-    if (typeof candela.instance !==  "object") {
-      candela.instance || (candela.instance= new candela());
-      candela.getInstance = function():candela {
-        return candela.instance;
-      };
-    }
     return candela.getInstance();
   }
 
@@ -23,3 +21,6 @@ export default class candela extends baseunit {
     return "cd";
   }
 }
+
+candela.initialize();
+candela.initialize = (function():void{return;});

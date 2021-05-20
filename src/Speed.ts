@@ -8,24 +8,29 @@ import meter from "./units/Meter";
 import second from "./units/Second";
 
 export default class speed extends dimension {
-
   private static speedOfLight:speed;
   private static unit:composedunit;
 
   constructor(value:number) {
     super(value);
-    speed.initUnitIfNecessary();
+  }
+
+  public static initialize():void {
+    speed.unit = new composedunit([
+        new unitOrderTuple(meter.getInstance(), 1)
+      , new unitOrderTuple(second.getInstance(), -1)
+    ]);
+    speed.speedOfLight = new speed(299792458);
   }
 
   public getUnit():internationalsystemunit {
     return speed.unit;
   }
 
-  private static initUnitIfNecessary() {
-    return speed.unit || (speed.unit = new composedunit([
-        new unitOrderTuple(meter.getInstance(), 1)
-      , new unitOrderTuple(second.getInstance(), -1)
-    ]));
+  public static getSpeedOfLight():speed {
+    return speed.speedOfLight;
   }
 }
 
+speed.initialize();
+speed.initialize = (function():void{return;});

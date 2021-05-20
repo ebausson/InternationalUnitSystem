@@ -9,17 +9,18 @@ export default class mole extends baseunit {
     super();
   }
 
+  public static initialize():void {
+    mole.instance = new mole();
+  }
+
   public static getInstance():mole {
-    if (typeof mole.instance !==  "object") {
-      mole.instance || (mole.instance= new mole());
-      mole.getInstance = function():mole {
-        return mole.instance;
-      };
-    }
-    return mole.getInstance();
+    return mole.instance;
   }
 
   getSymbol(): string {
     return "mol";
   }
 }
+
+mole.initialize();
+mole.initialize = (function():void{return;});

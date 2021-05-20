@@ -9,10 +9,14 @@ export default class second extends baseunit {
 
   private constructor(){
     super();
-    this.initSubunits();
   }
 
-  private initSubunits() {
+  public static initialize():void {
+    second.instance = new second();
+    second.initSubunits();
+  }
+
+  private static initSubunits() {
     second.subunits = [
       new subunit("ns", 1/1e9),
       new subunit("μs", 1/1e6),
@@ -30,13 +34,7 @@ export default class second extends baseunit {
   }
 
   public static getInstance():second {
-    if (typeof second.instance !==  "object") {
-      second.instance || (second.instance= new second());
-      second.getInstance = function():second {
-        return second.instance;
-      };
-    }
-    return second.getInstance();
+    return second.instance;
   }
 
   getSymbol(): string {
@@ -53,3 +51,6 @@ export default class second extends baseunit {
     return reducedResult.result;
   }
 }
+
+second.initialize();
+second.initialize = (function():void{return;});
