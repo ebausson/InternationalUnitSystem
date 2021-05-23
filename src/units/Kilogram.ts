@@ -14,7 +14,7 @@ export default class kilogram extends baseunit {
   }
 
   public static getInstance():kilogram {
-    return kilogram.getInstance();
+    return kilogram.instance;
   }
 
   getSymbol(): string {

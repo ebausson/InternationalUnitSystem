@@ -17,3 +17,11 @@ test("Transition frequency of Cesium: value", () => {
 test("Transition frequency of Cesium: printing", () => {
   expect(internationalsystemunitconstanthelper.getHyperfineTransitionFrequencyOfCesium().toString()).toBe("9192631770 Hz");
 });
+
+test("Plank constant: value", () => {
+  expect(internationalsystemunitconstanthelper.getPlankConstant().getValue()).toBe(6.62607015e-34);
+});
+
+test("Plank constant: printing", () => {
+  expect(internationalsystemunitconstanthelper.getPlankConstant().toString()).toBe("6.62607015e-34 J.s");
+});

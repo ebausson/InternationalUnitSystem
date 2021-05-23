@@ -2,6 +2,7 @@
 
 import frequency from "./Frequency";
 import speed from "./Speed";
+import action from "./Action";
 
 export default class internationalsystemunitconstanthelper {
 
@@ -11,5 +12,9 @@ export default class internationalsystemunitconstanthelper {
 
   public static getSpeedOfLight():frequency {
     return speed.getSpeedOfLight();
+  }
+
+  public static getPlankConstant():action {
+    return action.getPlankConstant();
   }
 }

@@ -16,5 +16,4 @@ export default class meter extends baseunit {
   getSymbol(): string {
     return "m";
   }
-
 }
