@@ -14,7 +14,7 @@ export default class ampere extends baseunit {
   }
 
   public static getInstance():ampere {
-    return ampere.getInstance();
+    return ampere.instance;
   }
 
   getSymbol(): string {

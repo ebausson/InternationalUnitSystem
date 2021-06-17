@@ -9,6 +9,10 @@ export default class meter extends baseunit {
     super();
   }
 
+  public static initialize():void {
+    meter.instance = new meter();
+  }
+
   public static getInstance(): meter {
     return meter.instance || (meter.instance= new meter());
   }
@@ -17,3 +21,6 @@ export default class meter extends baseunit {
     return "m";
   }
 }
+
+meter.initialize();
+meter.initialize = (function():void{return;});

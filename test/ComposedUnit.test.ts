@@ -1,14 +1,23 @@
 "use strict";
 
+import composedunit from "../src/units/ComposedUnit";
+import unitOrderTuple from "../src/units/UnitOrderTuple";
+
+
+import acceleration from "../src/Acceleration";
+import action from "../src/Action";
+import electric_charge from "../src/ElectricCharge";
+import energy from "../src/Energy";
 import frequency from "../src/Frequency";
-import hertz from "../src/units/Hertz";
 import speed from "../src/Speed";
 import surface from "../src/Surface";
 import volume from "../src/Volume";
-import composedunit from "../src/units/ComposedUnit";
+
+import joule from "../src/units/Joule";
+import hertz from "../src/units/Hertz";
 import meter from "../src/units/Meter";
-import unitOrderTuple from "../src/units/UnitOrderTuple";
 import second from "../src/units/Second";
+
 
 test("Expecting dimension to be sorted alphabetically before printing.", () => {
   const testUnit = new composedunit([new unitOrderTuple(second.getInstance(), -7), new unitOrderTuple(meter.getInstance(), 3)]);
@@ -32,31 +41,72 @@ test("Remove order number when it is 1 while printing dimensions.", () => {
   expect(testunit.getComputedSymbol()).toBe("m5.s");
 });
 
-test("Expecting the symbol of frequency to be 'Hz'.", () => {
-  expect(new frequency(1).getUnit().getSymbol()).toBe("Hz");
+//Acceleration
+test("Acceleration: dimensions", () => {
+  expect(new acceleration(1).getUnit().getComputedSymbol()).toBe("m.s-2");
+});
+test("Acceleration: printing", () => {
+  expect(new acceleration(24).toString()).toBe("24m.s-2");
 });
 
-
-test("Expecting a frequency of 24 Hertz to print as '24 Hz'.", () => {
-  expect(new frequency(24).toString()).toBe("24 Hz");
+//Action
+test("Action: dimensions", () => {
+  expect(new action(1).getUnit().getComputedSymbol()).toBe("J.s");
+});
+test("Action: printing", () => {
+  expect(new action(24).toString()).toBe("24J.s");
 });
 
-test("Expecting dimensions of a hertz to be 's-1'.", () => {
-  expect(hertz.getInstance().getComputedSymbol()).toBe("s-1");
+//Electric Charge
+test("Electric Charge: dimensions", () => {
+  expect(new electric_charge(1).getUnit().getComputedSymbol()).toBe("A.s");
+});
+test("Electric Charge: printing", () => {
+  expect(new electric_charge(24).toString()).toBe("24A.s");
 });
 
-test("Expecting the symbol of speed to be 'm.s-1'.", () => {
-  expect(new speed(1).getUnit().getSymbol()).toBe("m.s-1");
+//Energy
+test("Frequency: unit", () => {
+  expect(joule.getInstance().getSymbol()).toBe("J");
+});
+test("Energy: dimensions", () => {
+  expect(new energy(1).getUnit().getComputedSymbol()).toBe("kg.m2.s-2");
+});
+test("Energy: printing", () => {
+  expect(new energy(24).toString()).toBe("24J");
 });
 
-test("Expecting to print a speed of 24 meter per second as '24 m.s-1'.", () => {
-  expect(new speed(24).toString()).toBe("24 m.s-1");
+//Frequency
+test("Frequency: unit", () => {
+  expect(hertz.getInstance().getSymbol()).toBe("Hz");
+});
+test("Frequency: dimensions", () => {
+  expect(new frequency(1).getUnit().getComputedSymbol()).toBe("s-1");
+});
+test("Frequency: printing", () => {
+  expect(new frequency(24).toString()).toBe("24Hz");
 });
 
-test("Expecting the symbol of surface to be 'm2'.", () => {
-  expect(new surface(1).getUnit().getSymbol()).toBe("m2");
+//Speed
+test("Speed: dimensions", () => {
+  expect(new speed(1).getUnit().getComputedSymbol()).toBe("m.s-1");
+});
+test("Speed: printing", () => {
+  expect(new speed(24).toString()).toBe("24m.s-1");
 });
 
-test("Expecting the symbol of volume to be 'm3'.", () => {
-  expect(new volume(1).getUnit().getSymbol()).toBe("m3");
+//Surface
+test("Surface: dimensions", () => {
+  expect(new surface(1).getUnit().getComputedSymbol()).toBe("m2");
+});
+test("Surface: printing", () => {
+  expect(new surface(24).toString()).toBe("24m2");
+});
+
+//Volume
+test("vulume: dimensions", () => {
+  expect(new volume(1).getUnit().getComputedSymbol()).toBe("m3");
+});
+test("volume: printing", () => {
+  expect(new volume(24).toString()).toBe("24m3");
 });

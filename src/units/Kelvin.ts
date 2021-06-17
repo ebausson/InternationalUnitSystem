@@ -1,8 +1,8 @@
 "use strict";
 
-import internationalsystemunit from "./InternationalSystemUnit";
+import baseunit from "./BaseUnit";
 
-export default class kelvin extends internationalsystemunit {
+export default class kelvin extends baseunit {
   private static instance:kelvin;
 
   private constructor(){
@@ -14,7 +14,7 @@ export default class kelvin extends internationalsystemunit {
   }
 
   public static getInstance():kelvin {
-    return kelvin.getInstance();
+    return kelvin.instance;
   }
 
   getSymbol(): string {

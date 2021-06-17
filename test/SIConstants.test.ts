@@ -7,7 +7,7 @@ test("Speed of light: value", () => {
 });
 
 test("Speed of light: printing", () => {
-  expect(internationalsystemunitconstanthelper.getSpeedOfLight().toString()).toBe("299792458 m.s-1");
+  expect(internationalsystemunitconstanthelper.getSpeedOfLight().toString()).toBe("299792458m.s-1");
 });
 
 test("Transition frequency of Cesium: value", () => {
@@ -15,7 +15,7 @@ test("Transition frequency of Cesium: value", () => {
 });
 
 test("Transition frequency of Cesium: printing", () => {
-  expect(internationalsystemunitconstanthelper.getHyperfineTransitionFrequencyOfCesium().toString()).toBe("9192631770 Hz");
+  expect(internationalsystemunitconstanthelper.getHyperfineTransitionFrequencyOfCesium().toString()).toBe("9192631770Hz");
 });
 
 test("Plank constant: value", () => {
@@ -23,5 +23,5 @@ test("Plank constant: value", () => {
 });
 
 test("Plank constant: printing", () => {
-  expect(internationalsystemunitconstanthelper.getPlankConstant().toString()).toBe("6.62607015e-34 J.s");
+  expect(internationalsystemunitconstanthelper.getPlankConstant().toString()).toBe("6.62607015e-34J.s");
 });

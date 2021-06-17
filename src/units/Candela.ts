@@ -9,12 +9,12 @@ export default class candela extends baseunit {
     super();
   }
 
-  public initialize():void {
+  public static initialize():void {
     candela.instance = new candela();
   }
 
   public static getInstance():candela {
-    return candela.getInstance();
+    return candela.instance;
   }
 
   getSymbol(): string {
